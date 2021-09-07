@@ -1,4 +1,2 @@
 #!/bin/bash
-echo "#!/usr/bin/python3" > ej.py
-echo $PYCODE >> ej.py
-python ej.py
+python -c "$PYCODE"
