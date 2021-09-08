@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def islower(c):
     lwr = ord(c)
     if lwr > 96 and lwr < 123:
