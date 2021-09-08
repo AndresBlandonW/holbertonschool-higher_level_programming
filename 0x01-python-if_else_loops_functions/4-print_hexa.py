@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-for i in range(0,99):
-    if i < 99:
-        print("{:02d}".format(i), end=', ')
-    else:
-        print(i)
+for i in range(0, 99):
+    print("{} = 0x{}".format(i, '%0x' % i))
