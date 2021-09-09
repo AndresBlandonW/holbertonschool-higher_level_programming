@@ -1,4 +1,4 @@
-B0;136;0c#!/usr/bin/python3
+#!/usr/bin/python3
 import sys
 lon = len(sys.argv)
 if lon != 1:
