@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-import hidden_4
+import sys
+import hidden_4 as hidden
 
-if __name__ == "__main__":
-    modl = dir(hidden_4)
-    for i in range(len(modl)):
-        if(modl[i][0] != '_'):
-            print(modl[i])
+for i in dir(hidden):
+    if i[0:2] != "__":
+        print(i)
