@@ -7,4 +7,4 @@ if __name__ == "__main__":
         for i in range(1, lon):
             print("{}:".format(i), str(sys.argv[i]))
     else:
-        print("0 arguments.")
+        print("{} arguments.".format(lon - 1))
