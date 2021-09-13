@@ -7,9 +7,9 @@ if __name__ == "__main__":
     if (lon != 3):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
-    num1 = int(sys.argv[0])
-    num2 = int(sys.argv[2])
-    ope = str(sys.argv[1])
+    num1 = int(sys.argv[1])
+    num2 = int(sys.argv[3])
+    ope = str(sys.argv[2])
 
     if ope == "+":
         print("{} {} {} = {}".format(num1, num2, ope, add(num1, num2)))
