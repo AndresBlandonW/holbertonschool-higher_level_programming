@@ -1,23 +1,23 @@
 #!/usr/bin/python3
-from sys import argv
-from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
-    lon = len(argv) - 1
-    if lon != 3:
-        print("Usage: {:s} <a> <operator> <b>".format(argv[0]))
-        exit(1)
-    elif argv[2] == '+':
-        func = add
-    elif argv[2] == '-':
-        func = sub
-    elif argv[2] == '*':
-        func = mul
-    elif argv[2] == '/':
-        func = div
-    else:
-        print("Unknown operator. Available operators: +, -, *, and /")
-        exit(1)
+    import sys
+    from calculator_1 import add, sub, mul, div
+    lon = len(sys.argv)
 
-    result = func(int(argv[1]), int(argv[3]))
-    print("{:d} {:s} ".format(int(argv[1]), argv[2]), end='')
-    print("{:d} = {:d}".format(int(argv[3]), result))
+    if (lon != 3):
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
+    num1 = int(sys.argv[0])
+    num2 = int(sys.argv[2])
+    ope = str(sys.argv[1])
+
+    if ope == "+":
+        print("{} {} {} = {}".format(num1, num2, ope, add(num1, num2)))
+    elif ope == "-":
+        print("{} {} {} = {}".format(num1, num2, ope, sub(num1, num2)))
+    elif ope == "/":
+        print("{} {} {} = {}".format(num1, num2, ope, div(num1, num2)))
+    elif ope == "*":
+        print("{} {} {} = {}".format(num1, num2, ope, mul(num1, num2)))
+    else:
+        print("Unknown operator. Available operators: +, -, * and /")
