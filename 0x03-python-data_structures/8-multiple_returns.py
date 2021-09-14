@@ -3,9 +3,8 @@ def multiple_returns(sentence):
     ltup = []
     ltup = list(sentence)
 
-    if len(sentence) == 0:
-        first = "none"
+    if sentence is None or sentence == "":
+        ntup = (0, None)
     else:
-        first = ltup[0]
-    ntup = (len(ltup), first)
+        ntup = (len(ltup), ltup[0])
     return tuple(ntup)
