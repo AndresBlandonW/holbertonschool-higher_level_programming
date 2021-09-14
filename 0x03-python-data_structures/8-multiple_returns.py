@@ -2,5 +2,10 @@
 def multiple_returns(sentence):
     ltup = []
     ltup = list(sentence)
-    ntup = (len(ltup), ltup[0])
+
+    if len(sentence) == 0:
+        first = "none"
+    else:
+        first = ltup[0]
+    ntup = (len(ltup), first)
     return tuple(ntup)
