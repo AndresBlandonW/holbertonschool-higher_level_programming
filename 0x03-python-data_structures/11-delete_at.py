@@ -7,3 +7,4 @@ def delete_at(my_list=[], idx=0):
     else:
         pos = my_list[idx]
         my_list.remove(pos)
+        return my_list
