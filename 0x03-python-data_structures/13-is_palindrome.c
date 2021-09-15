@@ -21,7 +21,7 @@ int is_palindrome(listint_t **head)
       second = second->next;
     }
 
-  while (i != count / 2)
+  while (i != len / 2)
     {
       current = *head;
       second = *head;
@@ -29,7 +29,7 @@ int is_palindrome(listint_t **head)
         {
 	  current = current->next;
         }
-      for (j = 0; j < count - (i + 1); j++)
+      for (j = 0; j < len - (i + 1); j++)
         {
 	  second = second->next;
         }
