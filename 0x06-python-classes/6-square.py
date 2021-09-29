@@ -17,11 +17,11 @@ class Square:
     @size.setter
     def size(self, value):
         """setter the size"""
-        self.__size = value
-        if not isinstance(self.__size, int):
+        if not isinstance(value, int):
             raise TypeError('size must be an integer')
-        if self.__size < 0:
+        if value < 0:
             raise ValueError('size must be >= 0')
+        self.__size = value
 
     @property
     def position(self):
