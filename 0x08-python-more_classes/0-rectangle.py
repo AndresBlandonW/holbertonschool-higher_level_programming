@@ -3,4 +3,5 @@
 
 
 class Rectangle:
+    """defines a squeare"""
     pass
