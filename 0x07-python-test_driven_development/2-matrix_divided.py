@@ -4,7 +4,7 @@
 
 def matrix_divided(matrix, div):
     """
-    check the values of matrix,
+    check the values of the matrix,
     check the div
     
     Return - matrix of all divided elements
