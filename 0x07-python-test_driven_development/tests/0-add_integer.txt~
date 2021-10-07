@@ -1,0 +1,42 @@
+The ``add_integer`` module
+==========================
+
+Using ``add add_integer``
+---------------
+
+``add_integer(a, b)`` return the sum of 2 values:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+
+Test with 1 value:
+    >>> add_integer(1)
+    99
+
+If the value is negative:
+    >>> add_integer(100, -2)
+    98
+
+If the value is float:
+    >>> add_integer(100.3, -2)
+    98
+
+In reverse:
+    >>> add_integer(-5, 100)
+    95
+
+none:
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+boolean:
+    >>> add_integer(False, 1)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+String:
+    >>> add_integer(2, "hi")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
