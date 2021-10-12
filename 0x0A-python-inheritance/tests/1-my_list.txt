@@ -1,0 +1,14 @@
+The ``print_sorted`` module
+==========================
+
+Using ``print_sorted``
+---------------
+
+``print_sorted(self)`` return prints the list sorted:
+
+    >>> print_sorted = MyList = __import__('1-my_list').MyList
+    >>> list = [1, 2, 3, 4]
+    >>> print_sorted(list)
+
+    >>> list = [99, 22, 66, 44]
+    >>> print_sorted(list)
