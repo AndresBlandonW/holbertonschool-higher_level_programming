@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Class Square that inherits from Rectangle"""
+"""Class to rebel Myint value"""
 
 
 class MyInt(int):
+    """Class MyInt"""
     def __eq__(self, value):
         """Redefine equality to be unequal"""
         if isinstance(type(value), type(self)):
