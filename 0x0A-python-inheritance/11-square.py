@@ -12,9 +12,9 @@ class Square(Rectangle):
         Init method for Square
         """
         self.__size = size
-        self.integer_validator("size", size)
+        super().integer_validator("size", size)
         super().__init__(size, size)
 
     def __str__(self):
         """Print description of Square"""
-        return "[Square] {:d}/{:d}".format(self.__size, self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
