@@ -8,7 +8,7 @@ from models.base import Base
 class Rectangle(Base):
     """Rectangle class inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Init method for Rectangle"""
+        """Init method"""
         self.width = width
         self.height = height
         self.x = x
@@ -70,3 +70,48 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError('height must be > 0')
         self.__height = value
+
+    def area(self):
+        """Return area"""
+        return self.__height * self.__width
+
+    def display(self):
+        """Print rectangle with # and using x, y"""
+        print("\n" * self.__y, end="")
+        for i in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
+
+    def __str__(self):
+        """Str method"""
+        m = "[Rectangle] ({}) {}/{} - {}/{}"
+        m = m.format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return m
+
+    def update(self, *args, **kwargs):
+        """Assigns and arg with key to atributte"""
+        my_list = [None, None, None, None, None]
+
+        for i in range(len(args)):
+            my_list[i] = args[i]
+
+        if my_list[0] is not None:
+            self.id = args[0]
+        elif 'id' in kwargs:
+            self.id = kwargs['id']
+        if my_list[1] is not None:
+            self.__width = args[1]
+        elif 'width' in kwargs:
+            self.__width = kwargs['width']
+        if my_list[2] is not None:
+            self.__height = args[2]
+        elif 'height' in kwargs:
+            self.__height = kwargs['height']
+        if my_list[3] is not None:
+            self.__x = args[3]
+        elif 'x' in kwargs:
+            self.__x = kwargs['x']
+        if my_list[4] is not None:
+            self.__y = args[4]
+        elif 'y' in kwargs:
+            self.__y = kwargs['y']
