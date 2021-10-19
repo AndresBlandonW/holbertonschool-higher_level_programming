@@ -1,4 +1,4 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 """Unittest Rectangle class"""
 import unittest
 from models.base import Base
