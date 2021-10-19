@@ -8,7 +8,7 @@ from models.base import Base
 class Rectangle(Base):
     """Rectangle class inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Init method"""
+        """Init method for Rectangle"""
         self.width = width
         self.height = height
         self.x = x
@@ -115,3 +115,23 @@ class Rectangle(Base):
             self.__y = args[4]
         elif 'y' in kwargs:
             self.__y = kwargs['y']
+
+    def to_dictionary(self):
+        """
+        Return the dictionary representation
+        of Rectangle
+        """
+        new_dict = {}
+
+        for key in self.__dict__.keys():
+            if 'width' in key:
+                new_dict['width'] = self.__dict__[key]
+            elif 'height' in key:
+                new_dict['height'] = self.__dict__[key]
+            elif 'x' in key:
+                new_dict['x'] = self.__dict__[key]
+            elif 'y' in key:
+                new_dict['y'] = self.__dict__[key]
+            elif 'id' in key:
+                new_dict['id'] = self.__dict__[key]
+        return new_dict
