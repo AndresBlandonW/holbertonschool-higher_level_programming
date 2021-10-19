@@ -29,7 +29,7 @@ class TestBaseClass(unittest.TestCase):
         # Base 1 tests
         self.assertIsNotNone(self.base1)
         self.assertIsInstance(self.base1, Base)
-        self.assertEqual(self.base1.id, 31)
+        self.assertEqual(self.base1.id, 32)
 
         # Base 2 tests
         self.assertIsNotNone(self.base2)

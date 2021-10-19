@@ -50,7 +50,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertIsInstance(self.squ3, Base)
         self.assertIsInstance(self.squ3, Rectangle)
         self.assertIs(type(self.squ3), Square)
-        self.assertEqual(self.squ3.id, 219)
+        self.assertEqual(self.squ3.id, 69)
         self.assertEqual(self.squ3.width, 3)
         self.assertEqual(self.squ3.height, 3)
         self.assertEqual(self.squ3.x, 1)
@@ -77,13 +77,13 @@ class TestBaseClass(unittest.TestCase):
 
     def test_str(self):
         """Testing case for __str__ method"""
-        self.assertEqual(self.squ1.__str__(), "[Square] (252) 0/0 - 5")
-        self.assertEqual(self.squ2.__str__(), "[Square] (253) 2/0 - 2")
-        self.assertEqual(self.squ3.__str__(), "[Square] (254) 1/3 - 3")
+        self.assertEqual(self.squ1.__str__(), "[Square] (47) 0/0 - 5")
+        self.assertEqual(self.squ2.__str__(), "[Square] (48) 2/0 - 2")
+        self.assertEqual(self.squ3.__str__(), "[Square] (49) 1/3 - 3")
 
     def test_update_args(self):
         """Testing case for update args method"""
-        self.assertEqual(self.squ1.__str__(), "[Square] (257) 0/0 - 5")
+        self.assertEqual(self.squ1.__str__(), "[Square] (57) 0/0 - 5")
         self.squ1.update(10)
         self.assertEqual(self.squ1.__str__(), "[Square] (10) 0/0 - 5")
         self.squ1.update(1, 2)
@@ -96,23 +96,23 @@ class TestBaseClass(unittest.TestCase):
     def test_update_kwargs(self):
         """Testing case for update kwargs method"""
         self.squ1.update(x=12)
-        self.assertEqual(self.squ1.__str__(), "[Square] (262) 12/0 - 5")
+        self.assertEqual(self.squ1.__str__(), "[Square] (62) 12/0 - 5")
         self.squ1.update(size=7, y=1)
-        self.assertEqual(self.squ1.__str__(), "[Square] (262) 12/1 - 7")
+        self.assertEqual(self.squ1.__str__(), "[Square] (62) 12/1 - 7")
         self.squ1.update(size=7, id=89, y=1)
         self.assertEqual(self.squ1.__str__(), "[Square] (89) 12/1 - 7")
 
     def test_to_dictionary(self):
         """Testing case for to_dictionary method"""
-        self.assertEqual(self.squ4.__str__(), "[Square] (270) 2/1 - 10")
+        self.assertEqual(self.squ4.__str__(), "[Square] (55) 2/1 - 10")
         s4_dictionary = self.squ4.to_dictionary()
-        expected = {'id': 270, 'x': 2, 'size': 10, 'y': 1}
+        expected = {'id': 55, 'x': 2, 'size': 10, 'y': 1}
         self.assertEqual(s4_dictionary, expected)
         self.assertIs(type(s4_dictionary), dict)
 
-        self.assertEqual(self.squ5.__str__(), "[Square] (271) 1/0 - 1")
+        self.assertEqual(self.squ5.__str__(), "[Square] (56) 1/0 - 1")
         self.squ5.update(**s4_dictionary)
-        self.assertEqual(self.squ5.__str__(), "[Square] (270) 2/1 - 10")
+        self.assertEqual(self.squ5.__str__(), "[Square] (55) 2/1 - 10")
         self.assertFalse(self.squ4 == self.squ5)
 
     def tearDown(self):

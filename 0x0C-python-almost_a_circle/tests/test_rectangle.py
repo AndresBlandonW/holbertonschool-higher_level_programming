@@ -92,15 +92,6 @@ class TesBaseClass(unittest.TestCase):
         # Test with Rectangle 4
         self.assertEqual(str(self.rect4), "[Rectangle] (12) 0/0 - 8/7")
 
-    def test_str_output(self):
-        """Testing case __str__ in output"""
-        # Test with Rectangle 4
-        with io.StringIO() as output, redirect_stdout(output):
-            print(self.rect4)
-            val = output.getvalue()
-        self.assertEqual(
-            val, f"[Rectangle] ({12:d}) {0:d}/{0:d} - {8:d}/{7:d}\n")
-
     def test_update_args(self):
         """Testing for update method with args"""
         self.assertEqual(self.rect1.__str__(), "[Rectangle] (16) 0/0 - 3/2")
