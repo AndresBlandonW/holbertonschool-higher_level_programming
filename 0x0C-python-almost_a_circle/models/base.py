@@ -4,11 +4,11 @@ import json
 
 
 class Base:
-    """The base class"""
+    """The Base class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Init method"""
+        """Init method for Base class"""
         if id is not None:
             self.id = int(id)
         else:
@@ -56,3 +56,30 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attrib already set"""
+        if cls.__name__ == 'Rectangle':
+            obj = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            obj = cls(1)
+
+        obj.update(**dictionary)
+        return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        new_list = []
+        filename = "{}.json".format(cls.__name__)
+        try:
+            with open(filename, "r") as f:
+                    dic = cls.from_json_string(f.read())
+
+                    for i in dic:
+                        obj = cls.create(**i)
+                        new_list.append(obj)
+                    return new_list
+        except:
+            return []
