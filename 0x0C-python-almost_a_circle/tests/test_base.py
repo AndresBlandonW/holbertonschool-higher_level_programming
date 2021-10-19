@@ -1,9 +1,9 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 """Unittest Rectangle class"""
 import unittest
-from base import Base
-from rectangle import Rectangle
-from square import Square
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 import json
 
 
