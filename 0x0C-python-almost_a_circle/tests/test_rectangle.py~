@@ -1,4 +1,4 @@
-# !/usr/bin/python3
+#!/usr/bin/python3
 """Unittest Rectangle class"""
 import unittest
 from models.base import Base
@@ -7,7 +7,7 @@ import io
 from contextlib import redirect_stdout
 
 
-class TesBaseClass(unittest.TestCase):
+class TestRectangleClass(unittest.TestCase):
     """Test Rectangle class"""
     @classmethod
     def setUpClass(cls):
@@ -24,7 +24,7 @@ class TesBaseClass(unittest.TestCase):
 
     def test_values(self):
         """Test for values in Init method"""
-        # Rectangle 1 tests
+        #Rectangle 1 tests
         self.assertIsNotNone(self.rect1)
         self.assertEqual(self.rect1.width, 3)
         self.assertEqual(self.rect1.height, 2)
@@ -32,7 +32,7 @@ class TesBaseClass(unittest.TestCase):
         self.assertEqual(self.rect1.y, 0)
         self.assertIsInstance(self.rect1, Base)
 
-        # Rectangle 2 tests
+        #Rectangle 2 tests
         self.assertIsNotNone(self.rect2)
         self.assertEqual(self.rect2.width, 5)
         self.assertEqual(self.rect2.height, 12)
@@ -40,7 +40,7 @@ class TesBaseClass(unittest.TestCase):
         self.assertEqual(self.rect2.y, 0)
         self.assertIsInstance(self.rect2, Base)
 
-        # Rectangle 3 tests
+        #Rectangle 3 tests
         self.assertIsNotNone(self.rect3)
         self.assertEqual(self.rect3.width, 2)
         self.assertEqual(self.rect3.height, 10)
@@ -48,7 +48,7 @@ class TesBaseClass(unittest.TestCase):
         self.assertEqual(self.rect3.y, 1)
         self.assertIsInstance(self.rect3, Base)
 
-        # Rectangle 4 tests
+        #Rectangle 4 tests
         self.assertIsNotNone(self.rect4)
         self.assertEqual(self.rect4.width, 8)
         self.assertEqual(self.rect4.height, 7)
@@ -59,28 +59,28 @@ class TesBaseClass(unittest.TestCase):
 
     def test_area(self):
         """Testing case for area"""
-        # Rectangle 1 tests
+        #Rectangle 1 tests
         self.assertEqual(self.rect1.area(), 6)
 
-        # Rectangle 2 tests
+        #Rectangle 2 tests
         self.assertEqual(self.rect2.area(), 60)
 
-        # Rectangle 3 tests
+        #Rectangle 3 tests
         self.assertEqual(self.rect3.area(), 20)
 
-        # Rectangle 4 tests
+        #Rectangle 4 tests
         self.assertEqual(self.rect4.area(), 56)
 
     def test_display(self):
         """Testing case for display"""
-        # Rectangle 1 tests
+        #Rectangle 1 tests
         f = io.StringIO()
         with redirect_stdout(f):
             self.rect1.display()
         output = f.getvalue()
         self.assertEqual(output, f.getvalue())
 
-        # Rectangle 4 tests
+        #Rectangle 4 tests
         f = io.StringIO()
         with redirect_stdout(f):
             self.rect4.display()
@@ -89,12 +89,12 @@ class TesBaseClass(unittest.TestCase):
 
     def test_str_(self):
         """Testing case __str__"""
-        # Test with Rectangle 4
+        #Test with Rectangle 4
         self.assertEqual(str(self.rect4), "[Rectangle] (12) 0/0 - 8/7")
 
     def test_str_output(self):
         """Testing case __str__ in output"""
-        # Test with Rectangle 4
+        #Test with Rectangle 4
         with io.StringIO() as output, redirect_stdout(output):
             print(self.rect4)
             val = output.getvalue()
@@ -117,7 +117,7 @@ class TesBaseClass(unittest.TestCase):
 
     def test_to_dictionary(self):
         """Testing for to_dictionary method"""
-        # Test with Rectangle 3
+        #Test with Rectangle 3
         self.assertEqual(self.rect3.__str__(), "[Rectangle] (15) 1/1 - 2/10")
         rect3_dictionary = self.rect3.to_dictionary()
         expected = {'x': 1, 'y': 1, 'id': 15, 'height': 10, 'width': 2}
