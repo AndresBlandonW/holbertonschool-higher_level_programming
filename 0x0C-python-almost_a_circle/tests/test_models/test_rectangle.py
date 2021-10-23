@@ -7,7 +7,7 @@ import io
 from contextlib import redirect_stdout
 
 
-class TestBaseClass(unittest.TestCase):
+class TestRectangleClass(unittest.TestCase):
     """Test Rectangle class"""
     @classmethod
     def setUpClass(cls):
@@ -92,35 +92,26 @@ class TestBaseClass(unittest.TestCase):
         # Test with Rectangle 4
         self.assertEqual(str(self.rect4), "[Rectangle] (12) 0/0 - 8/7")
 
-    def test_str_output(self):
-        """Testing case __str__ in output"""
-        # Test with Rectangle 4
-        with io.StringIO() as output, redirect_stdout(output):
-            print(self.rect4)
-            val = output.getvalue()
-        self.assertEqual(
-            val, f"[Rectangle] ({12:d}) {0:d}/{0:d} - {8:d}/{7:d}\n")
-
     def test_update_args(self):
         """Testing for update method with args"""
-        self.assertEqual(self.rect1.__str__(), "[Rectangle] (16) 0/0 - 3/2")
+        self.assertEqual(self.rect1.__str__(), "[Rectangle] (49) 0/0 - 3/2")
         self.rect1.update(89)
         self.assertEqual(self.rect1.__str__(), "[Rectangle] (89) 0/0 - 3/2")
 
     def test_update_kwargs(self):
         """Testing for update method with kwargs"""
-        self.assertEqual(self.rect1.__str__(), "[Rectangle] (19) 0/0 - 3/2")
+        self.assertEqual(self.rect1.__str__(), "[Rectangle] (52) 0/0 - 3/2")
         self.rect1.update(height=1)
-        self.assertEqual(self.rect1.__str__(), "[Rectangle] (19) 0/0 - 3/1")
+        self.assertEqual(self.rect1.__str__(), "[Rectangle] (52) 0/0 - 3/1")
         self.rect1.update(x=1, height=5, y=3, width=7, id=89)
         self.assertEqual(self.rect1.__str__(), "[Rectangle] (89) 1/3 - 7/5")
 
     def test_to_dictionary(self):
         """Testing for to_dictionary method"""
         # Test with Rectangle 3
-        self.assertEqual(self.rect3.__str__(), "[Rectangle] (15) 1/1 - 2/10")
+        self.assertEqual(self.rect3.__str__(), "[Rectangle] (48) 1/1 - 2/10")
         rect3_dictionary = self.rect3.to_dictionary()
-        expected = {'x': 1, 'y': 1, 'id': 15, 'height': 10, 'width': 2}
+        expected = {'x': 1, 'y': 1, 'id': 48, 'height': 10, 'width': 2}
         self.assertEqual(rect3_dictionary, expected)
         self.assertIs(type(rect3_dictionary), dict)
 
