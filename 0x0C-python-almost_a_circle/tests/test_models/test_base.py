@@ -4,19 +4,12 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-import json
 
 
 class TestBaseClass(unittest.TestCase):
     """Test Rectangle class"""
-    @classmethod
-    def setUpClass(cls):
-        """Setupclass unittest"""
-        print('setup unittest class')
-
     def setUp(self):
         """SetUp unittest method"""
-        print('setUp')
         self.base1 = Base()
         self.base2 = Base(3)
         self.rect1 = Rectangle(10, 7, 2, 8)
@@ -24,7 +17,7 @@ class TestBaseClass(unittest.TestCase):
         self.squ1 = Square(5)
         self.squ2 = Square(7, 9, 1)
 
-    def test_values(self):
+    def test_instances(self):
         """Test for values in Init method"""
         # Base 1 tests
         self.assertIsNotNone(self.base1)
