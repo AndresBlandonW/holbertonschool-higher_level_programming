@@ -9,7 +9,7 @@ from contextlib import redirect_stdout
 
 
 class TestSquareClass(unittest.TestCase):
-    """Test Square class"""
+    """Test in Square class"""
     @classmethod
     def setUpClass(cls):
         """Setupclass unittest"""
