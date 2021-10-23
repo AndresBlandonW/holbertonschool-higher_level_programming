@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base Class"""
 import json
+import csv
 
 
 class Base:
@@ -23,7 +24,7 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-
+        
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -82,4 +83,25 @@ class Base:
                         new_list.append(obj)
                     return new_list
         except:
+            return []
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ that serializes and deserializes in CSV"""
+        file_name = "{}.csv".format(cls.__name__)
+        try:
+            with open(file_name, mode="r", encoding="utf-8", newline="")\
+                    as csv_f:
+                csv_obj = csv.reader(csv_f)
+                if cls.__name__ == "Rectangle":
+                    destiny = ['id', 'width', 'height', 'x', 'y']
+                    return [(cls.create(**{destiny[index]: int(el) for index,
+                                        el in enumerate(row)}))
+                            for row in csv_obj]
+                elif cls.__name__ == "Square":
+                    destiny = ['id', 'size', 'x', 'y']
+                    return [(cls.create(**{destiny[index]: int(el) for index,
+                                        el in enumerate(row)}))
+                            for row in csv_obj]
+        except IOError:
             return []
