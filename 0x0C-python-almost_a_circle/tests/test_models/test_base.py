@@ -109,7 +109,3 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(self.squ1.__str__(), s_output[0].__str__())
         self.assertEqual(self.squ2.__str__(), s_output[1].__str__())
         self.assertFalse(self.squ1 is s_output[0])
-
-    def tearDown(self):
-        """unittest tear down"""
-        print("Processed...")
