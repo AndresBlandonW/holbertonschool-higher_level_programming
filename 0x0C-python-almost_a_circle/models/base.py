@@ -24,7 +24,7 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        
+
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -84,6 +84,19 @@ class Base:
                     return new_list
         except:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes in csv"""
+        file_name = "{}.csv".format(cls.__name__)
+        with open(file_name, mode="w", encoding="utf-8", newline="") as csv_f:
+            csv_obj = csv.writer(csv_f)
+            if cls.__name__ == "Rectangle":
+                [csv_obj.writerow([obj.id, obj.width, obj.height,
+                                  obj.x, obj.y]) for obj in list_objs]
+            elif cls.__name__ == "Square":
+                [csv_obj.writerow([obj.id, obj.size,
+                                  obj.x, obj.y]) for obj in list_objs]
 
     @classmethod
     def load_from_file_csv(cls):
