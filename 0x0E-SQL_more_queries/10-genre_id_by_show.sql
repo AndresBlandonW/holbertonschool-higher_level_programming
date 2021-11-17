@@ -1,6 +1,6 @@
--- List all shows contained in DB that have at least
-SELECT tv.title, g.genre_id
-       FROM tv_shows as tv
-       INNER JOIN tv_show_genres as g
-       ON tv.id = g.show_id
-       ORDER BY tv.title, g.genre_id;
+-- List all shows contained in DB hbtn_0d_tvshows
+SELECT tv_shows.title, tv_show_genres.genre_id
+	FROM tv_shows
+	INNER JOIN tv_show_genres
+	ON tv_shows.id = tv_show_genres.show_id
+	ORDER BY tv_shows.title, tv_show_genres.genre_id;
