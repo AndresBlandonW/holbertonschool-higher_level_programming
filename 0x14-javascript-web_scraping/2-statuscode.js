@@ -2,5 +2,9 @@
 const request = require('request');
 const eurl = process.argv[2];
 request(eurl, function (error, response) {
-  console.log('code:', response && response.statusCode);
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('code:', response && response.statusCode);
+  }
 });
